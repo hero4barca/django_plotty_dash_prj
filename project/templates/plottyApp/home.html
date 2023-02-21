@@ -1,0 +1,31 @@
+{% load static %}
+{%load plotly_dash%}
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>
+        Plotty App
+       </title>
+
+       <style>
+        .iframe-container div {
+            height: 600px !important;
+        }
+       </style>
+    </head>
+
+    <body>
+       
+        <div id="content">
+            {% block content %}
+                Welcome to Plotty Test
+            {% endblock %}
+            <br/>
+        </div>
+        
+        <div class="iframe-container">
+            {% plotly_app name="WeatherPlot" %}
+        </div>
+        
+    <body>
+</html>
