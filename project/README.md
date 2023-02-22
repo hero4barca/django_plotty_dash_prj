@@ -1,1 +1,1 @@
-Simple trila of djnago_plotty_dash for graphs in django 
+Simple djnago_plotty_dash project for graphs
