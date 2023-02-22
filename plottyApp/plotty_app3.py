@@ -39,13 +39,24 @@ def update_graph(selected):
     products = Product.objects.all()
     name_list = list(products.values_list("name", flat=True))
     price_list = list(products.values_list("price", flat=True ))
+    qty_list = list(products.values_list("stock_qty", flat=True ))
+
 
     dictionary = {}
     dictionary["name"] = name_list
     dictionary["price"] = price_list
-    opts = name_list
+    dictionary["quantity"] = qty_list
+    opts = ["price", "quantity"]
 
-    message = "The option selected is :{}".format(selected)
-    fig = px.bar(dictionary, x="name", y="price")
+    message = "Graph shows product data"
+    # fig = px.bar(dictionary, x="name", y=selected)
+
+    if selected == "price":        
+        fig = px.bar(dictionary, x="name", y="price")
+        message = "Graph shows product price"
+    else:
+        fig = px.bar(dictionary, x="name", y="quantity")
+        message = "Graph shows product qunatity"
+
     return opts, fig, message
 
