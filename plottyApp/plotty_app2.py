@@ -7,7 +7,7 @@ from django_plotly_dash import DjangoDash
 
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv')
 
-app = DjangoDash('WeatherPlot')   # replaces dash.Dash
+app = DjangoDash('lifeExpByGdp')   # replaces dash.Dash
 
 app.layout = html.Div([
     dcc.Graph(id='graph-with-slider'),
