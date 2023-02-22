@@ -1,0 +1,1 @@
+Simple trila of djnago_plotty_dash for graphs in django 
