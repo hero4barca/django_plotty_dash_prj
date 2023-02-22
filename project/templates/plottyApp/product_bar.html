@@ -1,31 +1,16 @@
+{% extends "base.html" %}
 {% load static %}
 {%load plotly_dash%}
-<!DOCTYPE html>
-<html>
-    <head>
-       <title>
-        Plotty App
-       </title>
 
-       <style>
-        .iframe-container div {
-            height: 600px !important;
-        }
-       </style>
-    </head>
 
-    <body>
-       
-        <div id="content">
-            {% block content %}
-                Product info bar plot
-            {% endblock %}
-            <br/>
-        </div>
-        
-        <div class="iframe-container">
-            {% plotly_app name="ProductPlot" %}
-        </div>
-        
-    <body>
-</html>
+{% block content%}
+<div class="plot_desc">            
+        Bar Chart - Product info               
+    <br/>
+</div>
+
+<div class="iframe-container">
+    {% plotly_app name="ProductPlot" %}
+</div>
+
+{% endblock %}

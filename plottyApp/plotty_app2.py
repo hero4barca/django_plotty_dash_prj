@@ -4,8 +4,11 @@ import plotly.express as px
 import pandas as pd
 from django_plotly_dash import DjangoDash
 
+try:
+    df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv')
+except UnicodeError as e:
+    pass
 
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv')
 
 app = DjangoDash('lifeExpByGdp')   # replaces dash.Dash
 

@@ -1,31 +1,16 @@
+{% extends "base.html" %}
 {% load static %}
 {%load plotly_dash%}
-<!DOCTYPE html>
-<html>
-    <head>
-       <title>
-        Plotty App
-       </title>
 
-       <style>
-        .iframe-container div {
-            height: 600px !important;
-        }
-       </style>
-    </head>
 
-    <body>
-       
-        <div id="content">
-            {% block content %}
-                Scatter graph plot
-            {% endblock %}
-            <br/>
-        </div>
-        
-        <div class="iframe-container">
-            {% plotly_app name="lifeExpByGdp" %}
-        </div>
-        
-    <body>
-</html>
+{% block content%}
+<div class="plot_desc">            
+        Scatter graph - Life Expectancy by GDP               
+    <br/>
+</div>
+
+<div class="iframe-container">
+    {% plotly_app name="lifeExpByGdp" %}
+</div>
+
+{% endblock %}
