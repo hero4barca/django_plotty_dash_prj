@@ -6,6 +6,7 @@
        <title>
         Plotty App
        </title>
+        <script src="https://unpkg.com/htmx.org@1.2.1"></script>
 
        <style>
         .iframe-container div {
@@ -50,23 +51,27 @@
 
     <body>
         <div class="sidenav">
-            <a href="#">Simple </a>
-            <a href="#">Scatter </a>
-            <a href="#">Bar </a>
+            <a href="{% url 'home' %}">Simple </a>
+            <a href="{% url 'plot_2' %}">Scatter </a>
+            <a href="{% url 'plot_3' %}">Bar </a>
+            <!-- <a hx-get="{% url 'home' %}" hx-push-url="true"
+                        hx-target="#content" hx-swap="innerHTML" 
+                        hx-indicator="#content-loader">Simple</a> -->
           </div>
           <div class="main">
 
-            {% block content%}
-                <div class="plot_desc">            
-                        Simple plotty test                
-                    <br/>
+                <div class="content" id="content">
+                {% block content%}
+                    <div class="plot_desc">            
+                            Simple plotty test                
+                        <br/>
+                    </div>
+                    
+                    <div class="iframe-container">
+                        {% plotly_app name="SimpleExample" %}
+                    </div>
+                {% endblock %}
                 </div>
-                
-                <div class="iframe-container">
-                    {% plotly_app name="SimpleExample" %}
-                </div>
-
-            {% endblock %}
 
           </div>
            
