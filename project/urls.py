@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from plottyApp.views import simple
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
-    path('plotty/', include('plottyApp.urls')) 
+    path('plotty/', include('plottyApp.urls')), 
+
+    path('',simple, name="root"),
 ]

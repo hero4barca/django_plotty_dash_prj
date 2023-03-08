@@ -56,7 +56,7 @@ def update_graph(selected):
         message = "Graph shows product price"
     else:
         fig = px.bar(dictionary, x="name", y="quantity")
-        message = "Graph shows product qunatity"
+        message = "Graph shows product quantity"
 
     return opts, fig, message
 
