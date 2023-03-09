@@ -7,46 +7,8 @@
         Plotty App
        </title>
         <script src="https://unpkg.com/htmx.org@1.2.1"></script>
-
-       <style>
-        .iframe-container div {
-            height: 600px !important;
-        }
-
-        .sidenav {
-            height: 100%;
-            width: 200px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #2b5679;
-            overflow-x: hidden;
-            padding-top: 20px;
-            }
-
-        .sidenav a {
-            padding: 6px 6px 6px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #f1f1f1;
-            display: block;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-            }
-
-            .sidenav a:hover {
-            color: #f1f1f1;
-            }
-
-            .main {
-            margin-left: 200px; /* Same as the width of the sidenav */
-            }
-
-            @media screen and (max-height: 450px) {
-            .sidenav {padding-top: 15px;}
-            .sidenav a {font-size: 18px;}
-            }
-        </style>
+       <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+       
     </head>
 
     <body>
@@ -54,6 +16,7 @@
             <a href="{% url 'home' %}">Simple </a>
             <a href="{% url 'plot_2' %}">Scatter </a>
             <a href="{% url 'plot_3' %}">Bar </a>
+            <a href="{% url 'plot_4' %}">Live Update </a>
             <!-- <a hx-get="{% url 'home' %}" hx-push-url="true"
                         hx-target="#content" hx-swap="innerHTML" 
                         hx-indicator="#content-loader">Simple</a> -->

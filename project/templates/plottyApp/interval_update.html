@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{%load plotly_dash%}
+
+
+{% block content%}
+<div class="plot_desc">            
+        Satelite data graph              
+    <br/>
+</div>
+
+<div class="iframe-container">
+    {% plotly_app name="IntervalPlot" %}
+</div>
+
+{% endblock %}
