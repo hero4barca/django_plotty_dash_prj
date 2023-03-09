@@ -1,1 +1,0 @@
-Simple djnago_plotty_dash project for graphs
